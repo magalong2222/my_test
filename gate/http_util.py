@@ -20,10 +20,11 @@ def getSign(params, secretKey):
     return mySign
 
 def httpGet(url, resource, params=''):
-    #conn = http.client.HTTPSConnection(url, timeout=10)
-    #As we are in internet so we need to use tunel mode to connect with extrnal internet.
-    conn = http.client.HTTPSConnection('proxy.sjc.sap.corp', 8080, timeout=10)
-    conn.set_tunnel(url)
+    conn = http.client.HTTPSConnection(url, timeout=10)
+    # if we are in internet so we need to use tunel mode to connect with
+    # extrnal internet.
+    #conn = http.client.HTTPSConnection('proxy.sjc.sap.corp', 8080, timeout=10)
+    #conn.set_tunnel(url)
     conn.request("GET", resource + '/' + params)
     response = conn.getresponse()
     data = response.read().decode('utf-8')
