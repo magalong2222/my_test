@@ -1,0 +1,16 @@
+COMMON:
+    TRADE_PAIRS:
+        - eos_usdt
+        - btm_usdt
+
+GATE.IO:
+    DATA_FILE:      <add here>
+    API_QUERY_URL:  <add here>
+    API_TRADE_URL:  <add here>
+    API_KEY:        <add here>
+    SCRET_KEY:      <add here>
+    WALLET:
+        BTC:        <add here>
+
+
+OTHER:

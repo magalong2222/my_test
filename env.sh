@@ -1,0 +1,2 @@
+PYTHONPATH=<Your path>
+export PYTHONPATH
