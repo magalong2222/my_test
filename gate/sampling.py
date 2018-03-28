@@ -12,10 +12,16 @@ if __name__ == '__main__':
                            env.config.gate.scret_key)
     while(True):
         for pair in env.config.common.trade_pairs:
-            price_dict = gate_query.ticker(pair)
+            try:
+                # Sometime fetch market data may fail
+                price_dict = gate_query.ticker(pair)
+            except:
+                print('Warn: gate_query() return out of time.')
+                continue
             if price_dict['result'] == 'true':
                 price_dict.pop('result')
                 db.insert(pair, price_dict)
+                print('Info: Insert latest price(%s) into db.' % price_dict['last'])
             else:
                 print('Error: Fetch real time price failed.')
         time.sleep(10)

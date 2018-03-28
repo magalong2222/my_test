@@ -7,7 +7,7 @@ Provide the GateIO class to abstract web interaction
 
 from gate.http_util import getSign, httpGet, httpPost
 
-class GateIO:
+class GateIO(object):
     def __init__(self, url, apiKey, secretKey):
         self.__url = url
         self.__apiKey = apiKey
