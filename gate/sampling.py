@@ -1,5 +1,5 @@
 from common.environment import Env
-from common.db_access import Database
+from common.database import Database
 from gate.gate_api import GateIO
 import time
 
