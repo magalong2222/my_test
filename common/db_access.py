@@ -1,4 +1,3 @@
-from common.environment import Env
 import sqlite3
 
 
@@ -49,3 +48,11 @@ class Database(object):
         result = self.cursor.execute(sql)
         return result.fetchall()
 
+
+if __name__ == '__main__':
+    from common.environment import Env
+    env = Env()
+    db = Database(env)
+    sql = 'select rowid,last from eos_usdt order by rowid desc limit 900'
+    result = db.execute(sql)
+    print(result.fetchall())
