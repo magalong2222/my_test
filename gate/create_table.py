@@ -1,4 +1,4 @@
-from common.db_access import Database
+from common.database import Database
 from common.environment import Env
 
 ticker_field_dict = {'baseVolume':    'REAL', 
